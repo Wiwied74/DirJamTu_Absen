@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Absensi</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Absensi Harian</h1>
+    <form id="attendanceForm">
+        <label for="name">Nama:</label>
+        <select id="name" required>
+            <!-- Pilihan nama akan diisi secara otomatis -->
+            <option value="" disabled selected>Pilih Nama</option> <!-- Opsi kosong di awal -->
+        </select><br><br>
+        
+        <label for="date">Tanggal:</label>
+        <input type="date" id="date" required><br><br>
+        
+        <label for="status">Status Kehadiran:</label>
+        <select id="status" required>
+            <option value="Hadir">Hadir</option>
+            <option value="Sakit">Sakit</option>
+            <option value="Izin">Izin</option>
+        </select><br><br>
+        
+        <div class="button-container">
+            <button type="submit">Kirim Absensi</button>
+            <button type="button" id="downloadReportButton">Unduh Laporan Per Bulan</button>
+        </div>
+    </form>
+
+    <h2>Daftar Absensi</h2>
+    <table id="attendanceTable">
+        <thead>
+            <tr>
+                <th>Nama</th>
+                <th>Tanggal</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody id="attendanceList">
+            <!-- Daftar absensi akan ditampilkan di sini -->
+        </tbody>
+    </table>
+
+    <script src="script.js"></script>
+</body>
+</html>
